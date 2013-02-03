@@ -16,6 +16,8 @@
 * specific language governing permissions and limitations
 * under the License.
 */
+//Contact @rakatti/rakatti@gmail.com for node-drpc support
+
 var NodeDRPCClient = require('node-drpc');
 
 
@@ -25,12 +27,18 @@ var NodeDRPCClient = require('node-drpc');
 var timeout = null;
 // leave timeout as null if you dont want a timeout, or else set to a integer value
 
+//var stormFunctionName = "type the storm function name here";
+//var stormFunctionParam = "type stormfunction parameter as JSON string here";
+
+
 var nodeDrpcClient =  new  NodeDRPCClient( hostName, portNo, timeout);
 
-nodeDrpcClient.execute('exclamation', 'Hello', function(err, response) {
+nodeDrpcClient.execute(stormFunctionName, stormFunctionParam, function(err, response) {
   if (err) {
     console.error(err);
+    // implement error handling code here
   } else {
-    console.log("client stored:", response);
+    console.log("Storm DRPC Response : ", response);
+    // Implement your code here
   }
 });
