@@ -1,0 +1,33 @@
+{
+  "author": "Raghu Katti @rakatti <rakatti@gmail.com>",
+  "contributors": [
+    "Raghvendra Sangam raghavendra_sangam@yahoo.com",
+    "Matt Dobson @mdobs",
+    "Jean-Francois Rompre jrompre@gmail.com"
+  ],
+  "name": "node-drpc",
+  "homepage": "http://www.jvitconsulting.com, http://www.paywithglyph.com",
+  "description": "A simple Node DRPC client wrapper to access Storm DRPC service through javascript.",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rkatti/node-drpc.git"
+  },
+  "main": "NodeDRPCClient.js",
+  "directories": {
+    "lib": "./lib",
+    "node_modules": "./node_modules"
+  },
+  "bin": {
+  },
+  "engines": {
+    "node": ">=0.6"
+  },
+  "dependencies": {
+    "node-int64" : "0.3.0"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+  }
+}
