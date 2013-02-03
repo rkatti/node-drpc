@@ -29,6 +29,7 @@ var nodeDrpcClient =  new  NodeDRPCClient( hostName, portNo, timeout);
 nodeDrpcClient.execute( Storm function Name, Storm function parameter as JSON string, function(err, response) {
   if (err) {
     console.error(err);
+    // implement error handling logic here
   } else {
     console.log("Storm function response :", response);
     // implement your logic here
