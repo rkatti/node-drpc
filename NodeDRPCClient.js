@@ -16,29 +16,75 @@
 * specific language governing permissions and limitations
 * under the License.
 */
-var thrift = require('thrift');
+var thrift = require('./thrift_module/thrift/lib/thrift');
+//var thrift = require('thrift');
 
-var DistributedRPC = require('./DistributedRPC.js'),
-    ttypes = require('./storm_types.js');
 
-var f = function() {
+var DistributedRPC = require('./lib/DistributedRPC.js'),
+    ttypes = require('./lib/storm_types.js');
 
-var connection = thrift.createConnection('localhost', 3772);
-var    client = thrift.createClient(DistributedRPC, connection);
+function NodeDRPCClient (hostName, portNo, timeout) {
 
- 
-connection.on('error', function(err) {
-  console.error(err);
-});
+ if (!hostName || !portNo) {
+    throw new Error("NodeDRPCClient initialization error ! Hostname and Port number must be specified.");
 
-client.execute('exclamation', 'Hello', function(err, response) {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log("client stored:", response);
-  }
- connection.end();
-}); 
+ }
+
+ if (typeof(hostName) !== 'string') {
+    throw new Error("NodeDRPCClient initialization error ! Hostname must be a string.");
+ }
+
+
+ if (typeof(portNo) !==  'number') {
+    throw new Error("NodeDRPCClient initialization error ! PortNo must be a integer.");
+ }
+
+ if ( timeout != null && typeof(timeout) !==  'number') {
+    throw new Error("NodeDRPCClient initialization error ! Timeout must be a integer.");
+ }
+
+ this.hostName = hostName;
+ this.portNo = portNo;
+ this.timeout = timeout;
 }
 
-f();
+NodeDRPCClient.prototype = {};
+
+
+NodeDRPCClient.prototype.execute = function(drpcFunction, drpcFunctionParam, callback ) {
+
+   var connection;
+
+   if (!callback) {
+      if (typeof(obj) !== 'function') {   
+             throw new Error("NodeDRPCClient initialization error ! Callback must be a function.");
+      }
+   }
+
+   if (this.timeout) {
+      connection = thrift.createConnection(this.hostName, this.portNo, this.timeout);
+   } else {
+      connection = thrift.createConnection(this.hostName, this.portNo);
+   }
+
+   var  client = thrift.createClient(DistributedRPC, connection);
+
+   connection.on('error', function(err) {
+      
+        if (!callback) {
+           callback(err);
+        }
+   });
+  
+   client.execute(drpcFunction, drpcFunctionParam, function(err, response) {
+ 
+      
+       if (callback) {
+         callback(err, response); 
+       }
+       connection.end();
+   });
+ 
+}
+
+module.exports = NodeDRPCClient;
