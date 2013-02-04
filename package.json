@@ -6,7 +6,7 @@
     "Jean-Francois Rompre jrompre@gmail.com"
   ],
   "name": "node-drpc",
-  "homepage": "http://www.paywithglyph.com",
+  "homepage": "",
   "description": "A simple Node DRPC client wrapper to access Storm DRPC service through javascript.",
   "version": "0.0.5",
   "repository": {
