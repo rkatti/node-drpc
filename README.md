@@ -42,4 +42,4 @@ nodeDrpcClient.execute( Storm function Name, Storm function parameter as JSON st
 
 ## Licence
 
-Node-DRPC is Copyright (c) 2012 and licenced under the MIT licence. 
+Node-DRPC is licenced under the MIT licence. 
