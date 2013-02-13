@@ -8,7 +8,7 @@
   "name": "node-drpc",
   "homepage": "",
   "description": "A simple Node DRPC client wrapper to access Storm DRPC service through javascript.",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "repository": {
     "type": "git",
     "url": "git://github.com/rkatti/node-drpc.git"
