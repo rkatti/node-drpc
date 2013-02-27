@@ -22,9 +22,9 @@ Storm DRPC client in javascript for nodejs. The client encapsulates Storm-thrift
 Please, contact for support at Twitter @rakatti or rakatti@gmail.com.
 
 ```javascript
-var request = require('node-drpc');
+var nodeDrpc = require('node-drpc');
 
-var nodeDrpcClient =  new  NodeDRPCClient( hostName, portNo, timeout);
+var nodeDrpcClient =  new  nodeDrpc( hostName, portNo, timeout);
 
 nodeDrpcClient.execute( Storm function Name, Storm function parameter as JSON string, function(err, response) {
   if (err) {
