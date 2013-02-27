@@ -2,13 +2,12 @@
   "author": "Raghu Katti @rakatti <rakatti@gmail.com>",
   "contributors": [
     "Raghvendra Sangam raghavendra_sangam@yahoo.com",
-    "Matt Dobson @mdobs",
     "Jean-Francois Rompre jrompre@gmail.com"
   ],
   "name": "node-drpc",
   "homepage": "",
   "description": "A simple Node DRPC client wrapper to access Storm DRPC service through javascript.",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "repository": {
     "type": "git",
     "url": "git://github.com/rkatti/node-drpc.git"
