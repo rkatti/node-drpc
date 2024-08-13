@@ -18,7 +18,6 @@ Or from source:
 
 Want to connect your Javascript application with Storm Framework, use node-drpc. Node-DRPC is a Storm DRPC client in javascript for nodejs. The client encapsulates Storm-thrift related details. You can simply connect to any DRPC client by passing in the hostname/ipaddress and port no. of the target DRPC server.
 
-Please, contact for support at Twitter @rakatti or rakatti@gmail.com.
 
 ```javascript
 var nodeDrpc = require('node-drpc');
